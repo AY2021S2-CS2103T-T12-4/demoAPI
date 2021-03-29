@@ -30,6 +30,10 @@ def home():
     return '''<h1>This is my very first website</h1>
 <p>You can make API calls to me! I contain a list of books!</p>'''
 
+# A route to return all supported request methods
+@app.route('/api/v1/options', methods=['OPTIONS'])
+def options():
+    return "Allowed request method: \"GET\""
 
 @app.route('/timeout', methods=['GET'])
 def timeout():
